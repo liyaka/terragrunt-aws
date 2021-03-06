@@ -1,0 +1,16 @@
+terragrunt init
+
+
+terragrunt plan -out vpc.tfplan
+terragrunt apply "vpc.tfplan"
+terragrunt output
+terragrunt destroy
+
+
+terragrunt run-all apply
+
+
+
+aws eks --region eu-west-1 update-kubeconfig --name poly-prod1
+
+terraform force-unlock <lock-id>
